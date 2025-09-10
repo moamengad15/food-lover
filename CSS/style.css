@@ -40,6 +40,8 @@ body.dark .navbar-main h2::after {
   color: #f1c40f;
 }
 
+
+
 /* Hero */
 body.dark .hero { background: #1b1b1b; }
 body.dark .hero-text h1 { color: #fff; }
@@ -183,7 +185,6 @@ body.dark .social-media-icons i:hover { color: #f1c40f; }
 
 
 /* Navbar */
-
 .navbar {
   background-color: var(--white);
   height: 100px;
@@ -195,36 +196,32 @@ body.dark .social-media-icons i:hover { color: #f1c40f; }
   box-shadow: 10px 10px 15px rgba(0,0,0,0.1);
 }
 
-#menu-icon
-{
-    font-size: 24px;
-    cursor: pointer;
-    color: red;
-}
-
 .navbar-main {
   display: flex;
   justify-content: space-between;
-  
+  align-items: center;
 }
 
 .navbar-main h2 {
   font-size: 30px;
+  margin: 0;
+  padding: 0;
 }
 
-.navbar-main h2::after  {
-    content: '.';
-    display: inline-block;
-    color: var(--l-m-main-color);
+.navbar-main h2::after {
+  content: '.';
+  display: inline-block;
+  color: var(--l-m-main-color);
 }
 
-.navbar .menu ul{
+.navbar .menu ul {
   display: flex;
   gap: 20px;
 }
 
 .navbar .menu ul li a {
   color: gray;
+  text-decoration: none;
 }
 
 .navbar .menu ul li a:hover {
@@ -248,14 +245,35 @@ body.dark .social-media-icons i:hover { color: #f1c40f; }
   height: 100vh;
 }
 
-.hamburger {
-  display: none;
-  font-size: 28px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #333;
+@media (max-width: 768px) {
+  #menu-icon {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    background: var(--white);
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .menu.show {
+    display: flex;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px 0;
+  }
 }
+
+
+
 
 
 @media (max-width: 768px) {
@@ -1222,6 +1240,3 @@ body.dark .social-media-icons i:hover { color: #f1c40f; }
     gap: 25px;
   }
 }
-
-
-
